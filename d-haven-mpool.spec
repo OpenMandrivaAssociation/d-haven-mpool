@@ -41,7 +41,7 @@
 
 Name:           d-haven-mpool
 Version:        1.0
-Release:        %mkrel 3.0.2
+Release:        %mkrel 3.0.3
 Epoch:          0
 Summary:        D-Haven Managed Pool async
 License:        Apache Software License
@@ -74,8 +74,6 @@ Requires(post):    jpackage-utils >= 0:1.7.2
 Requires(postun):  jpackage-utils >= 0:1.7.2
 %if %{gcj_support}
 BuildRequires:    java-gcj-compat-devel
-Requires(post):   java-gcj-compat
-Requires(postun): java-gcj-compat
 %endif
 
 %if ! %{gcj_support}
