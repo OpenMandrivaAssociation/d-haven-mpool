@@ -41,7 +41,7 @@
 
 Name:           d-haven-mpool
 Version:        1.0
-Release:        %mkrel 3.0.3
+Release:        %mkrel 3.0.4
 Epoch:          0
 Summary:        D-Haven Managed Pool async
 License:        Apache Software License
@@ -60,7 +60,7 @@ Patch0:         d-haven-mpool-1.0-build_xml.patch
 
 Requires:       concurrent
 Requires:       d-haven-event
-BuildRequires:  jpackage-utils >= 0:1.7.2
+BuildRequires:  java-rpmbuild >= 0:1.7.2
 BuildRequires:  ant >= 0:1.6.5
 BuildRequires:  junit
 %if %{with_maven}
