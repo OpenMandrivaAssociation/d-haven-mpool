@@ -80,7 +80,6 @@ BuildRequires:    java-gcj-compat-devel
 BuildArch:      noarch
 %endif
 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 D-Haven Managed Pool is a library designed to provide pools
