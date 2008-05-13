@@ -41,7 +41,7 @@
 
 Name:           d-haven-mpool
 Version:        1.0
-Release:        %mkrel 3.0.4
+Release:        %mkrel 3.0.5
 Epoch:          0
 Summary:        D-Haven Managed Pool async
 License:        Apache Software License
@@ -93,8 +93,6 @@ they are created, destroyed, acquired, and released.
 %package javadoc
 Summary:        Javadoc for %{name}
 Group:          Development/Java
-Requires(post):   /bin/rm,/bin/ln
-Requires(postun): /bin/rm
 
 %description javadoc
 %{summary}.
@@ -110,10 +108,7 @@ Group:          Development/Documentation
 
 %prep
 %setup -q -n managed-pool
-find . -name "*.jar" -exec rm -f {} \;
-#for j in $(find . -name "*.jar"); do
-#    mv $j $j.no
-#done
+%remove_java_binaries
 %patch -b .sav
 
 %build
@@ -183,9 +178,7 @@ cp -p LICENSE.txt $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 cp -pr target/docs/* $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 %endif
 
-%if %{gcj_support}
-%{_bindir}/aot-compile-rpm
-%endif
+%{gcj_compile}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -193,19 +186,13 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db
-fi
+%{update_gcjdb}
 %endif
 
 %postun
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db
-fi
+%{clean_gcjdb}
 %endif
 
 %files
@@ -214,10 +201,7 @@ fi
 %{_javadir}/*
 %{_datadir}/maven2/poms/*
 %config(noreplace) %{_mavendepmapfragdir}/*
-%if %{gcj_support}
-%dir %{_libdir}/gcj/%{name}
-%attr(-,root,root) %{_libdir}/gcj/%{name}/%{name}-*%{version}.jar.*
-%endif
+%{gcj_files}
 
 %files javadoc
 %defattr(0644,root,root,0755)
