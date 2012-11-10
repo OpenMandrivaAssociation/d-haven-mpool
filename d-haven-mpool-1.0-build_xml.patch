@@ -1,0 +1,38 @@
+--- build.xml.sav	2004-06-18 19:38:09.000000000 +0200
++++ build.xml	2007-07-05 15:48:56.000000000 +0200
+@@ -23,10 +23,11 @@
+         <property location="${doc.dir}/test" name="junit.report.dir"/>
+         <property name="project.name" value="${ant.project.name}"/>
+         <property name="project.version" value="1.0"/>
+-        <property location="${target.dir}/${project.name}.jar" name="jar"/>
++        <property location="${target.dir}/${project.name}-${project.version}.jar" name="jar"/>
+         <property location="${target.dir}/${project.name}-${project.version}" name="package.dir"/>
+         <property location="${project.name}-${project.version}.zip" name="distribution"/>
+         <property name="tests.main" value="org.d_haven.mpool.test.AllTests"/>
++        <property name="javadocdir" value="${basedir}/target/docs/apidocs"/>
+     </target>
+ 
+     <path id="java.class.path">
+@@ -149,4 +150,22 @@
+         <zip basedir="${package.dir}" compress="true" destfile="${distribution}"/>
+         <checksum file="${distribution}" fileext=".md5"/>
+     </target>
++  <target name="javadoc" description="o Generate javadoc">
++    <mkdir dir="${javadocdir}">
++    </mkdir>
++    <tstamp>
++      <format pattern="2004-yyyy" property="year">
++      </format>
++    </tstamp>
++    <property name="copyright" value="Copyright &amp;copy; 2004-2005 D-Haven.org. All Rights Reserved.">
++    </property>
++    <property name="title" value="Managed Pool 1.0 API">
++    </property>
++    <javadoc source="1.4" use="true" private="true" destdir="${javadocdir}" author="true" version="true" sourcepath="${basedir}/src/java" packagenames="org.d_haven.mpool.*">
++      <classpath>
++        <path refid="build.classpath">
++        </path>
++      </classpath>
++    </javadoc>
++  </target>
+ </project>

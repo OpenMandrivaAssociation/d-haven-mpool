@@ -1,0 +1,7 @@
+sources:
+  "d-haven-mpool-1.0-jpp-depmap.xml:"	c58385d4a0e9ec9cd6eb708926f33f17f226cf47
+  "d-haven-mpool-1.0.pom:"	f4e6f7cd6880316777ac0a4ac7cd9d0029d36325
+  "d-haven-mpool-1.0-src.tar.gz:"	21c30e7f14c8ffb7cd9deaec67cc5ba53229e65f
+  "pom-maven2jpp-depcat.xsl:"	5861cae5f65e559ece90a7342d182f5a534b65de
+  "pom-maven2jpp-mapdeps.xsl:"	a837c6d38ea6fb127ba5bf20d917c1e8af791120
+  "pom-maven2jpp-newdepmap.xsl:"	834413ffc7f650705ce65ca2c89100153142cd92
