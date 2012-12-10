@@ -213,3 +213,49 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644,root,root,0755)
 %{_docdir}/%{name}-%{version}
 %endif
+
+
+%changelog
+* Thu Aug 07 2008 Thierry Vignaud <tvignaud@mandriva.com> 0:1.0-6.0.5mdv2009.0
++ Revision: 266552
+- rebuild early 2009.0 package (before pixel changes)
+
+* Tue May 13 2008 Alexander Kurtakov <akurtakov@mandriva.org> 0:1.0-3.0.5mdv2009.0
++ Revision: 206551
+- cleanup spec
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Anssi Hannula <anssi@mandriva.org>
+    - buildrequire java-rpmbuild, i.e. build with icedtea on x86(_64)
+
+* Sat Sep 15 2007 Anssi Hannula <anssi@mandriva.org> 0:1.0-3.0.3mdv2008.0
++ Revision: 87314
+- rebuild to filter out autorequires of GCJ AOT objects
+- remove unnecessary Requires(post) on java-gcj-compat
+
+* Wed Aug 08 2007 David Walluck <walluck@mandriva.org> 0:1.0-3.0.2mdv2008.0
++ Revision: 60072
+- Import d-haven-mpool
+
+
+
+* Thu Jul 26 2007 Alexander Kurtakov <akurtakov@active-lynx.com> - 0:1.0-3.0.1mdv2008.0
+- Adapt for Mandriva
+
+* Thu Jul 05 2007 Ralph Apel <r.apel@r-apel.de> 0:1.0-3jpp
+- Make Vendor, Distribution based on macro
+- Add gcj_support option
+- Optionally build without maven
+- Add -manual subpackage when built with maven
+- Add maven2 depmap frag and pom
+
+* Thu Mar 23 2006 Ralph Apel <r.apel@r-apel.de> 0:1.0-2jpp
+- First JPP-1.7 release
+
+* Mon Sep 05 2005 Ralph Apel <r.apel@r-apel.de> 0:1.0-1jpp
+- First release

@@ -1,0 +1,108 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>d-haven-mpool</groupId>
+  <artifactId>managed-pool</artifactId>
+  <name>Managed Pool</name>
+  <version>1.0</version>
+  <description>D-Haven Managed Pool is a library designed to provide pools
+        that are asynchronously managed in a background thread.  The
+        pool system is very flexible and can accomodate just about
+        every need.  It boasts the ability to add pool listeners so
+        that you can instrument and intercept the pooled objects when
+        they are created, destroyed, acquired, and released.</description>
+  <url>http://projects.d-haven.org/modules/sections/index.php?op=listarticles&amp;secid=5</url>
+  <issueManagement>
+    <url>http://sourceforge.net/projects/d-haven/</url>
+  </issueManagement>
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <address>d-haven-developer@lists.sourceforge.net</address>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <inceptionYear>2004</inceptionYear>
+  <mailingLists>
+    <mailingList>
+      <name>D-Haven User List</name>
+      <subscribe>http://lists.sourceforge.net/lists/listinfo/d-haven-user</subscribe>
+      <unsubscribe>http://lists.sourceforge.net/lists/listinfo/d-haven-user</unsubscribe>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum=d-haven-user</archive>
+    </mailingList>
+    <mailingList>
+      <name>D-Haven Developer List</name>
+      <subscribe>http://lists.sourceforge.net/lists/listinfo/d-haven-developer</subscribe>
+      <unsubscribe>http://lists.sourceforge.net/lists/listinfo/d-haven-developer</unsubscribe>
+      <archive>http://sourceforge.net/mailarchive/forum.php?forum=d-haven-developer</archive>
+    </mailingList>
+  </mailingLists>
+  <developers>
+    <developer>
+      <id>bloritsch</id>
+      <name>Berin Loritsch</name>
+      <email>bloritsch@d-haven.org</email>
+      <organization>D-Haven.org</organization>
+    </developer>
+    <developer>
+      <id>stefano</id>
+      <name>Stefano Mazzocchi</name>
+      <email>stefano@apache.org</email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>pdonald</id>
+      <name>Peter Donald</name>
+      <email>peter@apache.org</email>
+      <organization></organization>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/d-haven:managed-pool</connection>
+    <url>http://cvs.sourceforge.net/viewcvs.py/d-haven/managed-pool/</url>
+  </scm>
+  <organization>
+    <name>D-Haven.org</name>
+    <url>http://projects.d-haven.org</url>
+  </organization>
+  <build>
+    <sourceDirectory>src/java</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/test/Test*.java</include>
+          </includes>
+          <excludes>
+            <exclude>**/mocks/*.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>event</groupId>
+      <artifactId>event</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>concurrent</groupId>
+      <artifactId>concurrent</artifactId>
+      <version>1.3.4</version>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>default</id>
+      <name>Default Repository</name>
+      <url>file://~/dist/managed-pool</url>
+    </repository>
+    <site>
+      <id>default</id>
+      <name>Default Site</name>
+      <url>scp://wiki.d-haven.org/~/api/managed-pool</url>
+    </site>
+  </distributionManagement>
+</project>
