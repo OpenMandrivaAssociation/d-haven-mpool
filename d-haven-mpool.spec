@@ -41,7 +41,7 @@
 
 Name:           d-haven-mpool
 Version:        1.0
-Release:        %mkrel 6.0.5
+Release:        6.0.6
 Epoch:          0
 Summary:        D-Haven Managed Pool async
 License:        Apache Software License
