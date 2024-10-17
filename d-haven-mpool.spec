@@ -45,7 +45,7 @@ Release:        6.0.6
 Epoch:          0
 Summary:        D-Haven Managed Pool async
 License:        Apache Software License
-Url:            http://d-haven.org/
+Url:            https://d-haven.org/
 Group:          Development/Java
 Source0:        d-haven-mpool-1.0-src.tar.gz
 #cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/d-haven login
